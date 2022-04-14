@@ -2,10 +2,20 @@
 
 ## Architecture 
 
+![aws_devops-Expriment (2)](https://user-images.githubusercontent.com/20411077/163437200-3690b0c2-b3de-4257-a54c-995a6de32ada.jpg)
 
-![aws_devops-Expriment (1)](https://user-images.githubusercontent.com/20411077/163433728-ab09a400-7ea8-4742-a2a3-ae9cbff4bbe9.jpg)
-
-
+- CDK 
+    - Create an IoT thing, attach a policy to X509 certificate, then attach the cert to the IoT thing
+    - Create IoT rules to deliver data to Kinesis Firehose, DB
+    - Create a Lambda function to query from DB 
+-  Amplify 
+    - Cognito and PubSub to subscribe to IoT topics 
+    - Attach an AWS IoT policy to the Cognito ID
+    - Pre-built authentication UI (useAuthenticator)
+- CharJs
+    - Plot and update two simple charts 
+    - Chart 1. Keep pulling data from DB via an API
+    - Chart 2. Subscribe to an IoT topic 
 
 ## Check AWS IoT Service Endpoint 
 ```
@@ -76,7 +86,6 @@ aws iot attach-thing-principal --thing-name $THING_NAME \
 
 ## Reference 
 [1](https://aws-quickstart.github.io/quickstart-iot-connectivity-security/)
-
 
 
 ## 
