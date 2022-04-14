@@ -82,7 +82,10 @@ export default function WithSubnavigation({ user, signOut }) {
                         Sign In
                     </Button>
                     <Button
-                        onClick={signOut}
+                        onClick={() => {
+                            window.localStorage.clear();
+                            signOut();
+                        }}
                         display={{ base: 'none', md: 'inline-flex' }}
                         fontSize={'sm'}
                         fontWeight={600}

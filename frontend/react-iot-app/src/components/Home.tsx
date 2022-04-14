@@ -1,7 +1,7 @@
 import WithSubnavigation from "./NavBar";
-import IoTSubDataChart from './IoTSubDataChart';
-import DynamoDBDataChart from './DynamoDBDataChart';
 import React from "react";
+import DynamoDBDataChart from './DynamoDBDataChart';
+import IoTSubDataChart from './IoTSubDataChart';
 
 
 interface HomePageProps {
@@ -10,12 +10,14 @@ interface HomePageProps {
 }
 
 
-const HomePage = ({ user, signOut }) => {
+const HomePage = ({ user, signOut }: HomePageProps) => {
 
   const childFunc = React.useRef(null);
+  const childFuncDb = React.useRef(null);
 
   const signOutUnSub = () => {
-    childFunc.current();
+    const unsub = childFunc.current();
+    const stopTimer = childFuncDb.current();
     window.localStorage.clear();
     signOut();
   }
@@ -23,10 +25,9 @@ const HomePage = ({ user, signOut }) => {
   return (
     <div>
       <WithSubnavigation user={user} signOut={signOutUnSub}></WithSubnavigation>
-      <div>
-        <DynamoDBDataChart></DynamoDBDataChart>
-        <IoTSubDataChart childFunc={childFunc}></IoTSubDataChart>
-      </div>
+      <DynamoDBDataChart childFunc={childFuncDb}></DynamoDBDataChart>
+      <IoTSubDataChart childFunc={childFunc}></IoTSubDataChart>
+
     </div>
   )
 }
