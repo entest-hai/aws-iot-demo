@@ -1,7 +1,11 @@
 # AWS IoT Demo with CDK and Amplify 
 
 ## Architecture 
+
+
 ![aws_devops-Expriment (1)](https://user-images.githubusercontent.com/20411077/163433728-ab09a400-7ea8-4742-a2a3-ae9cbff4bbe9.jpg)
+
+
 
 ## Check AWS IoT Service Endpoint 
 ```
