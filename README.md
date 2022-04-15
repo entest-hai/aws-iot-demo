@@ -3,7 +3,10 @@
 ## Architecture 
 
 ![aws_devops-Expriment (2)](https://user-images.githubusercontent.com/20411077/163437200-3690b0c2-b3de-4257-a54c-995a6de32ada.jpg)
-
+- Demo
+    - [**demo react web**](https://master.d2s0cqpzgt11ee.amplifyapp.com/) no real-time here because we need to publish data from the test/test_pub.py
+    - [**video demo**](https://haitran-swincoffee-demo.s3.ap-southeast-1.amazonaws.com/aws-iot-cdk-amplify-demo.mp4)
+    - [GitHub here](https://github.com/entest-hai/aws-iot-demo)
 - CDK 
     - Create an IoT thing, attach a policy to X509 certificate, then attach the cert to the IoT thing
     - Create IoT rules to deliver data to Kinesis Firehose, DB
@@ -21,9 +24,7 @@
     - Attach a AWS IoT policy to the X509 ceritifcate to allow read/write AWS IoT topics
 - AWS IoT topic rules
     - Attach a role to a rule to enable AWS IoT rules write to S3, Firehose, DyanmoDB 
-- Demo
-    - [**demo react web**](https://master.d2s0cqpzgt11ee.amplifyapp.com/) no real-time here because we need to publish data from the test/test_pub.py
-    - [**video demo**](https://haitran-swincoffee-demo.s3.ap-southeast-1.amazonaws.com/aws-iot-cdk-amplify-demo.mov)
+
 
 ## Check AWS IoT Service Endpoint 
 ```
