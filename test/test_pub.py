@@ -9,8 +9,8 @@ from concurrent.futures import ThreadPoolExecutor
 awshost = 'a2tfs6uw3j7iz3-ats.iot.ap-southeast-1.amazonaws.com'
 thingName = "DemoDevice"
 caPath = "./certificate/AmazonRootCA1.pem"
-certPath = "./certificate/8afc0605402dbff4f8d8382f04a78b384a59637be0f6acd27b59cf4c84fcf028-certificate.pem.crt"
-keyPath = "./certificate/8afc0605402dbff4f8d8382f04a78b384a59637be0f6acd27b59cf4c84fcf028-private.pem.key"
+certPath = "./certificate/file-certificate.pem.crt"
+keyPath = "./certificate/file-private.pem.key"
 
 
 def publish_tempature():
@@ -35,7 +35,7 @@ def publish_tempature():
         message = json.dumps(
             {'id': 'device01', 'tempature': tempature, 'location': 'Hanoi'})
         pub.send_data(message)
-        time.sleep(3)
+        time.sleep(2)
 
 
 def publish_signal():
@@ -65,7 +65,7 @@ def publish_signal():
         message = json.dumps(
             {'id': 'device01', 'signal': signal, 'location': 'Hanoi'})
         pub.send_data(message)
-        time.sleep(2)
+        time.sleep(1)
 
 
 if __name__ == "__main__":
