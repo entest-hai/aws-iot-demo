@@ -65,8 +65,8 @@ const DynamoDBDataChart = ({ childFunc }) => {
   }, [])
 
   function stopTimer() {
-    console.log('stop timer ...')
-    clearInterval(dbTimer);
+    // console.log('stop timer ...')
+    // clearInterval(dbTimer);
     return 1;
   }
 
@@ -113,14 +113,17 @@ const DynamoDBDataChart = ({ childFunc }) => {
 
     const keepPullingData = () => {
       dbTimer = setInterval(async () => {
-
         fetchData();
-
       }, 2000)
     }
 
     fetchData();
     keepPullingData();
+
+    return () => {
+      clearInterval(dbTimer);
+      console.log('stop timer by clean user effect...');
+    }
 
   }, [])
 

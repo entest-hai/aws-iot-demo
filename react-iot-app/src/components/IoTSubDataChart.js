@@ -75,8 +75,8 @@ const IoTSubDataChart = ({ childFunc }) => {
   }, [])
 
   function unsubscribe() {
-    console.log('unsubscribe IoT...')
-    subscriber.unsubscribe();
+    // console.log('unsubscribe IoT...')
+    // subscriber.unsubscribe();
     return 1;
   }
 
@@ -129,6 +129,11 @@ const IoTSubDataChart = ({ childFunc }) => {
     }
 
     subscribe();
+
+    return () => {
+      console.log('unsubscribe IoT by clean up user effect...')
+      subscriber.unsubscribe();
+    }
 
   }, [])
 
